@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+    var today = new Date;
+    document.getElementById('date').innerHTML= today.toDateString();
+</script>
+	<div class="topnav" id="topnav_home">
+		<a href="#Home">Home</a>
+		<a href="#">Tariffs and Prices</a>
+		<a href="#">About insurance</a>
+		<a href="#">Contacts</a>
+		<a href="#" class="topnav_sign">Sign in</a>
+		<a href="#" class="topnav_sign">Sign up</a>
+		<input type="datetime-local" name="date" id="date" disabled>
+	</div>
+	<div class="header">
+		
+	</div>
+</body>
+</html>

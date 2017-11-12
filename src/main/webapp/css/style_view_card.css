@@ -1,0 +1,89 @@
+#btn_viewcard{
+    margin-left: 1%;
+}
+.modal-title {
+    font-family: times, Times New Roman, times-roman, georgia, serif;
+    color: #444;
+    margin: 0;
+    font-size: 30px;
+    line-height: 44px;
+    letter-spacing: -2px;
+    font-weight: bold;
+}
+.modal-dialog {
+    max-width: 800px;
+}
+#card-front {
+    -webkit-box-shadow: 3px 4px 33px 1px rgba(0,0,0,0.46);
+    -moz-box-shadow: 3px 4px 33px 1px rgba(0,0,0,0.46);
+    box-shadow: 3px 4px 33px 1px rgba(0,0,0,0.46);
+    height: 100%;
+    background: url('/image/view_card/card-backgound.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+.card-title {
+    font-family: serif;
+    font-weight: bold;
+    font-size: 17px;
+    color: darkslategrey;
+    padding-top: 4%;
+    margin: 0%;
+    margin-left: 17%;
+}
+#card-front hr{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.info-client{
+    /* display: block; */
+    margin-left: 46%;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#card-front span {
+    font-family: 'Merienda One';
+    font-size: 12px;
+    color: blue;
+}
+#date_until{
+    font-family: 'Merienda One';
+    margin-left: 71%;
+    font-weight: bold;
+}
+#card-back {
+    -webkit-box-shadow: 3px 4px 33px 1px rgba(0,0,0,0.46);
+    -moz-box-shadow: 3px 4px 33px 1px rgba(0,0,0,0.46);
+    box-shadow: 3px 4px 33px 1px rgba(0,0,0,0.46);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+#image_logo{
+    width: 29%;
+    margin: 6%;
+    margin-left: 21%;
+}
+#logo-name{
+    font-family: 'Merienda One';
+    font-size: 36px;
+    color: #a72a2a;
+    margin-left: -15px;
+}
+#info-card{
+    display: block;
+    font-family: 'Merienda One';
+    font-size: 14px;
+    color: black;
+    text-align: center;
+}
+.modal-content{
+    width: auto;
+}

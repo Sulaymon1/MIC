@@ -1,0 +1,37 @@
+body {
+  font-family: "Raleway","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+.ready-insurance_tariff-wrapper{
+  margin-top: 2%;
+}
+
+.iner-carousel {
+  height: 400px;
+}
+
+.info-container {
+  background-color: rgba(240, 245, 249, 1) !important;
+  margin: 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.btn-container {
+  margin-left: 0;
+  margin-bottom: 10%;
+}
+
+#footer {
+  border-top: 1px solid red;
+}
+#MIC{
+  font: 12pt/10pt sans-serif;;
+}
+#modaltrigger{
+  margin-left: 50%;
+  margin-right: 1%;
+}

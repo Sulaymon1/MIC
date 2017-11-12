@@ -1,0 +1,42 @@
+.block-container{
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.jumbotron-custom {
+    /*width: 70%;*/
+    padding-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #f9f8fa;
+    border-radius: 10px;
+    /*border: 1px solid red; */
+}
+
+.settings-label {
+    margin-top: 10%;
+    color: #555;
+    font-weight: bold;
+}
+.form-control{
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #555;
+    font-weight: 700;
+    background-color: #efefef;
+    border: 1px solid #efefef;
+}
+.form-check-inline> label{
+    display: block;
+    margin-right: 1%;
+}
+#btn_save {
+    float: right;
+}
