@@ -1,0 +1,352 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.6.5
+-- Dumped by pg_dump version 9.6.3
+
+-- Started on 2017-11-15 20:23:49
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 1 (class 3079 OID 12387)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 2166 (class 0 OID 0)
+-- Dependencies: 1
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 189 (class 1259 OID 33263)
+-- Name: insurance_company; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE insurance_company (
+    id bigint,
+    name character varying NOT NULL,
+    surname character varying NOT NULL,
+    lastname character varying,
+    age integer,
+    address character varying NOT NULL,
+    tel character varying,
+    email character varying,
+    passport_series character varying,
+    price bigint,
+    expiration_date date
+);
+
+
+ALTER TABLE insurance_company OWNER TO postgres;
+
+--
+-- TOC entry 188 (class 1259 OID 33260)
+-- Name: insurance_family; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE insurance_family (
+    id bigint,
+    name character varying NOT NULL,
+    age integer,
+    passport_series character varying,
+    price bigint,
+    expiration_date date
+);
+
+
+ALTER TABLE insurance_family OWNER TO postgres;
+
+--
+-- TOC entry 187 (class 1259 OID 33257)
+-- Name: insurance_for_one; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE insurance_for_one (
+    id bigint,
+    passport_series character varying,
+    price bigint,
+    expiration_date date
+);
+
+
+ALTER TABLE insurance_for_one OWNER TO postgres;
+
+--
+-- TOC entry 186 (class 1259 OID 33243)
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE users (
+    id integer NOT NULL,
+    name character varying NOT NULL,
+    surname character varying NOT NULL,
+    lastname character varying NOT NULL,
+    age character varying NOT NULL,
+    tel character varying,
+    address character varying NOT NULL,
+    email character varying,
+    username character varying NOT NULL,
+    password character varying NOT NULL
+);
+
+
+ALTER TABLE users OWNER TO postgres;
+
+--
+-- TOC entry 185 (class 1259 OID 33241)
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE users_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2167 (class 0 OID 0)
+-- Dependencies: 185
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- TOC entry 191 (class 1259 OID 33369)
+-- Name: users_temp; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE users_temp (
+    id integer NOT NULL,
+    name character varying NOT NULL,
+    surname character varying NOT NULL,
+    lastname character varying NOT NULL,
+    age character varying NOT NULL,
+    tel character varying,
+    address character varying NOT NULL,
+    email character varying,
+    username character varying NOT NULL,
+    password character varying NOT NULL,
+    control_phrase character varying,
+    passport_series character varying,
+    price integer,
+    expiration_date character varying
+);
+
+
+ALTER TABLE users_temp OWNER TO postgres;
+
+--
+-- TOC entry 190 (class 1259 OID 33367)
+-- Name: users_temp_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE users_temp_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE users_temp_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2168 (class 0 OID 0)
+-- Dependencies: 190
+-- Name: users_temp_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE users_temp_id_seq OWNED BY users_temp.id;
+
+
+--
+-- TOC entry 2024 (class 2604 OID 33246)
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- TOC entry 2025 (class 2604 OID 33372)
+-- Name: users_temp id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY users_temp ALTER COLUMN id SET DEFAULT nextval('users_temp_id_seq'::regclass);
+
+
+--
+-- TOC entry 2157 (class 0 OID 33263)
+-- Dependencies: 189
+-- Data for Name: insurance_company; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY insurance_company (id, name, surname, lastname, age, address, tel, email, passport_series, price, expiration_date) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2156 (class 0 OID 33260)
+-- Dependencies: 188
+-- Data for Name: insurance_family; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY insurance_family (id, name, age, passport_series, price, expiration_date) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2155 (class 0 OID 33257)
+-- Dependencies: 187
+-- Data for Name: insurance_for_one; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY insurance_for_one (id, passport_series, price, expiration_date) FROM stdin;
+42	mypassport	300	2020-11-12
+43	fjslfs	300	2020-11-13
+\.
+
+
+--
+-- TOC entry 2154 (class 0 OID 33243)
+-- Dependencies: 186
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY users (id, name, surname, lastname, age, tel, address, email, username, password) FROM stdin;
+42	Sulaymon	Hursanov	abdurazikovich	9.01.1997	9674645004	DU	demirel6797@mail.ru	sulaymon	844037d1b20417a1d0622ec18b2db7fd
+43	Roma	Klimov	qwerty	2.01.2222	445614645646465	DU	demirel6797@mail.ru	roma	d8578edf8458ce06fbc5bb76a58c5ca4
+\.
+
+
+--
+-- TOC entry 2169 (class 0 OID 0)
+-- Dependencies: 185
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('users_id_seq', 43, true);
+
+
+--
+-- TOC entry 2159 (class 0 OID 33369)
+-- Dependencies: 191
+-- Data for Name: users_temp; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY users_temp (id, name, surname, lastname, age, tel, address, email, username, password, control_phrase, passport_series, price, expiration_date) FROM stdin;
+2	fsf	jfk	gls	43	09453553533	fks	kkgls	faji	fewow	1234	\N	\N	\N
+3	ffahio	jfie	fji	33	43095833893	fhsjk	hosi	ghss	bvfjks	12345	\N	\N	\N
+12				.Month.				sulaymon1	d8578edf8458ce06fbc5bb76a58c5ca4	bf1cbdd91b95e8a18297d9620d581260	\N	\N	\N
+14	fnakl	nfkjs	nfjk	2.01.3222	22222222222	nfkl	fan@fnsk	nkldf	527c21ecddf63633160ccc3e53b4c6cb	8d483a374efdd394b523d696b5f1c1f6	\N	\N	\N
+16	fklankl	fnkjs	nfklsd	2.01.3222	22222222222	nfkls	 fnmks@fk	mnaklnfk	954d29a02b48cffdb19488474258b8b4	af8d4d0ccb15bb6a3d414dab430fd7f1	\N	\N	\N
+18	fanj	fjidsl	jois	2.01.2222	22403303434	jg	fjdisl	fajlj	8b4e2bda407a55d2da4416af5721d745	f7a384004e74c1f32bfa9e42199dec10	\N	\N	\N
+20	uids	fjieo	fjelq	2.01.2222	2222222222	fls	admkal@dm	gjksl	ad713ca1c4846c1f38965fa7b8a4f748	887d1b2b6d971824494a407893d07d13	\N	\N	\N
+\.
+
+
+--
+-- TOC entry 2170 (class 0 OID 0)
+-- Dependencies: 190
+-- Name: users_temp_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('users_temp_id_seq', 25, true);
+
+
+--
+-- TOC entry 2027 (class 2606 OID 33251)
+-- Name: users users_id_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_id_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2030 (class 2606 OID 33377)
+-- Name: users_temp users_temp_id_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY users_temp
+    ADD CONSTRAINT users_temp_id_pk PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2032 (class 2606 OID 33379)
+-- Name: users_temp users_temp_username_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY users_temp
+    ADD CONSTRAINT users_temp_username_key UNIQUE (username);
+
+
+--
+-- TOC entry 2028 (class 1259 OID 33256)
+-- Name: users_username_uindex; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE UNIQUE INDEX users_username_uindex ON users USING btree (username);
+
+
+--
+-- TOC entry 2035 (class 2606 OID 33282)
+-- Name: insurance_company insurance_company_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY insurance_company
+    ADD CONSTRAINT insurance_company_id_fkey FOREIGN KEY (id) REFERENCES users(id);
+
+
+--
+-- TOC entry 2034 (class 2606 OID 33274)
+-- Name: insurance_family insurance_family_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY insurance_family
+    ADD CONSTRAINT insurance_family_id_fkey FOREIGN KEY (id) REFERENCES users(id);
+
+
+--
+-- TOC entry 2033 (class 2606 OID 33266)
+-- Name: insurance_for_one insurance_for_one_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY insurance_for_one
+    ADD CONSTRAINT insurance_for_one_id_fkey FOREIGN KEY (id) REFERENCES users(id);
+
+
+-- Completed on 2017-11-15 20:23:52
+
+--
+-- PostgreSQL database dump complete
+--
+
